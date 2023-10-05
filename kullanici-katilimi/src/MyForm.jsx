@@ -1,14 +1,14 @@
 
 import React, { useState } from "react";
 
-const MyForm = (props) => {
+const MyForm = () => {
 
 
   const dataForm = {
-    name: "Kullanıcı Adı",
-    mail: "kullanici@mail.com",
+    name: "",
+    mail: "",
 
-    terms: true
+    terms: false,
   };
 
   const [data, setData] = useState(dataForm);
@@ -21,23 +21,23 @@ const MyForm = (props) => {
   };
 
 
-  /*
+  
    const handleSubmit = (e) => {
     e.preventDefault(); 
-    console.log(data); 
-*/
+    onData(data); };
+
 
 
   return (
 
 
 
-    <div className="orm">
+   
 
-      <form >
+      <form id="forum" onSubmit={handleSubmit}>
 
         <div>
-          <label htmlFor="html ">
+          <label >
             Name:
             <input type="text" name="name" value={data.name} onChange={handleChange} />
           </label>
@@ -46,7 +46,7 @@ const MyForm = (props) => {
 
         <div>
 
-          <label htmlFor="mail">
+          <label >
             Mail:
             <input type="text" name="mail" value={data.mail} onChange={handleChange} />
           </label>
@@ -58,7 +58,7 @@ const MyForm = (props) => {
 
         <div>
 
-          <label htmlFor="html">
+          <label >
             Terms:
             <input type="checkbox" name="terms" checked={data.terms} onChange={handleChange} />
           </label>
@@ -69,13 +69,13 @@ const MyForm = (props) => {
 
 
 
-    </div>
 
 
   );
 
 
 }
+
 
 
 export default MyForm;
